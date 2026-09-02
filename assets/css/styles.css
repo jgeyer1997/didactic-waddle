@@ -1,0 +1,509 @@
+/* ==========================================================================
+   IPSO FACTO SYNERGY SRL — foglio di stile principale
+   Palette: bianco (sfondo), verde #1E3A2E, bordeaux #6E1D2B, nero (testo).
+   Nessun altro colore: i toni secondari sono trasparenze di nero o dei due
+   colori primari.
+   ========================================================================== */
+
+:root {
+  --verde: #1E3A2E;
+  --bordeaux: #6E1D2B;
+  --nero: #000000;
+  --bianco: #FFFFFF;
+
+  --testo: rgba(0, 0, 0, 0.82);
+  --testo-tenue: rgba(0, 0, 0, 0.58);
+  --linea: rgba(0, 0, 0, 0.12);
+  --velo: rgba(30, 58, 46, 0.04);
+
+  --larghezza: 1160px;
+  --gutter: 24px;
+  --raggio: 4px;
+}
+
+/* --------------------------------------------------------------- Reset --- */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body,
+h1, h2, h3, p, ul, ol, figure, blockquote { margin: 0; padding: 0; }
+
+ul, ol { list-style: none; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ------------------------------------------------------------ Tipografia - */
+
+body {
+  background: var(--bianco);
+  color: var(--testo);
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--nero);
+}
+
+strong { font-weight: 600; }
+
+a { color: var(--verde); }
+
+p + p { margin-top: 1.1em; }
+
+/* -------------------------------------------------------------- Layout --- */
+
+.container {
+  width: 100%;
+  max-width: var(--larghezza);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding: 96px 0; }
+
+.section--alt {
+  background: var(--velo);
+  border-block: 1px solid var(--linea);
+}
+
+.section__title {
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  max-width: 20ch;
+  margin-bottom: 32px;
+}
+
+.section__intro {
+  max-width: 62ch;
+  margin-bottom: 56px;
+  color: var(--testo-tenue);
+}
+
+.occhiello {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  margin-bottom: 14px;
+}
+
+.rule {
+  width: 72px;
+  height: 3px;
+  border: 0;
+  background: var(--bordeaux);
+  margin: 28px 0;
+}
+
+.verde { color: var(--verde); }
+.bordeaux { color: var(--bordeaux); }
+
+/* Reso visibile solo quando riceve il focus da tastiera. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--verde);
+  color: var(--bianco);
+  padding: 12px 20px;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------- Intestazione -- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bianco);
+  border-bottom: 1px solid var(--linea);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 96px;
+}
+
+.site-header__logo img {
+  height: 58px;
+  width: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 34px;
+}
+
+.site-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--nero);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--verde);
+  border-bottom-color: var(--bordeaux);
+}
+
+/* Pulsante hamburger: nascosto da desktop, mostrato sotto i 900px. */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-inline: auto;
+  background: var(--verde);
+}
+
+/* ----------------------------------------------------------------- Hero -- */
+
+.hero {
+  padding: 104px 0 88px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Filigrana: il marchio in grande sul lato destro, come nel poster. */
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  translate: 0 -50%;
+  width: 460px;
+  height: 460px;
+  background: url("../img/marchio.png") center / contain no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+  .hero::after { display: none; }
+}
+
+.hero__inner { position: relative; z-index: 1; }
+
+.hero__title {
+  font-size: clamp(2.4rem, 6.5vw, 4.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero__text {
+  max-width: 60ch;
+  font-size: 1.06rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--verde);
+  border-radius: var(--raggio);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn--pieno {
+  background: var(--verde);
+  color: var(--bianco);
+}
+.btn--pieno:hover,
+.btn--pieno:focus-visible {
+  background: var(--bordeaux);
+  border-color: var(--bordeaux);
+}
+
+.btn--bordo {
+  background: transparent;
+  color: var(--verde);
+}
+.btn--bordo:hover,
+.btn--bordo:focus-visible {
+  background: var(--verde);
+  color: var(--bianco);
+}
+
+/* ------------------------------------------------------------ Chi siamo -- */
+
+.due-colonne {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.citazione {
+  border-left: 3px solid var(--bordeaux);
+  padding-left: 26px;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--verde);
+}
+
+/* -------------------------------------------------------- Come lavoriamo - */
+
+.fasi {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.fase {
+  padding: 0 28px;
+  border-left: 1px solid var(--linea);
+}
+.fase:first-child { border-left: 0; padding-left: 0; }
+.fase:last-child { padding-right: 0; }
+
+.fase__icona {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  fill: none;
+  stroke: var(--verde);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fase__titolo {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--verde);
+  margin-bottom: 10px;
+}
+
+.fase__testo {
+  font-size: 0.95rem;
+  color: var(--testo-tenue);
+}
+
+/* ------------------------------------------------------------- Prodotti -- */
+
+.prodotti {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px 40px;
+}
+
+.prodotto img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  object-position: center bottom;
+  margin-bottom: 22px;
+  transition: transform 0.3s ease;
+}
+
+.prodotto:hover img { transform: scale(1.04); }
+
+.prodotto__titolo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-top: 16px;
+  border-top: 2px solid var(--verde);
+  margin-bottom: 8px;
+}
+
+.prodotto__testo {
+  font-size: 0.95rem;
+  color: var(--testo-tenue);
+}
+
+/* -------------------------------------------------------------- Partner -- */
+
+.partner {
+  background: var(--verde);
+  color: var(--bianco);
+  padding: 72px 0;
+}
+
+.partner p {
+  max-width: 68ch;
+  margin-inline: auto;
+  text-align: center;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.partner strong { font-weight: 600; }
+
+/* ------------------------------------------------------------- Contatti -- */
+
+.contatti {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contatti__dati { font-style: normal; }
+
+.contatto { margin-bottom: 28px; }
+
+.contatto__etichetta {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  margin-bottom: 4px;
+}
+
+.contatto a {
+  color: var(--nero);
+  text-decoration: none;
+  border-bottom: 1px solid var(--linea);
+}
+.contatto a:hover { color: var(--verde); border-bottom-color: var(--verde); }
+
+.contatti__mappa {
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  overflow: hidden;
+}
+
+.contatti__mappa iframe {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
+}
+
+/* --------------------------------------------------------- Piè di pagina - */
+
+.site-footer {
+  border-top: 1px solid var(--linea);
+  padding: 56px 0 44px;
+  text-align: center;
+}
+
+.site-footer__marchio {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 18px;
+}
+
+.site-footer__nome {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--verde);
+}
+
+.site-footer__riga {
+  font-size: 0.92rem;
+  color: var(--testo-tenue);
+  margin-top: 6px;
+}
+
+.site-footer__copy {
+  font-size: 0.82rem;
+  color: var(--testo-tenue);
+  margin-top: 20px;
+}
+
+/* ---------------------------------------------------------- Responsive --- */
+
+@media (max-width: 980px) {
+  .prodotti { grid-template-columns: repeat(2, 1fr); }
+  .fasi { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
+  .fase:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .due-colonne,
+  .contatti { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    inset-inline: 0;
+    top: 100%;
+    background: var(--bianco);
+    border-bottom: 1px solid var(--linea);
+    padding: 8px 0 20px;
+  }
+
+  .site-nav.is-open { display: block; }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding-inline: var(--gutter);
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+}
+
+@media (max-width: 620px) {
+  .section { padding: 64px 0; }
+  .hero { padding: 64px 0 56px; }
+  .site-header__inner { min-height: 76px; }
+  .site-header__logo img { height: 42px; }
+  .prodotti { grid-template-columns: 1fr; gap: 44px; }
+  .fasi { grid-template-columns: 1fr; }
+  .fase { border-left: 0; padding-inline: 0; }
+  .btn { flex: 1 1 100%; text-align: center; }
+}
