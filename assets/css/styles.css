@@ -352,6 +352,10 @@ p + p { margin-top: 1.1em; }
 
 .product:hover img { transform: scale(1.04); }
 
+/* Set by the script on the images that hold more than one shot: a click walks
+   through the other photographs of the category. */
+.product img.is-clickable { cursor: pointer; }
+
 .product__title {
   font-size: 1.1rem;
   font-weight: 600;

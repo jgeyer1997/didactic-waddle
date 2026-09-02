@@ -16,7 +16,7 @@ Do not introduce new Italian identifiers or comments.
 | --- | --- |
 | `index.html` | all page content |
 | `assets/css/styles.css` | all styles |
-| `assets/js/main.js` | mobile menu and footer year |
+| `assets/js/main.js` | mobile menu, product image galleries and footer year |
 | `assets/img/` | logo (`logo.jpg`) and brand mark (`marchio.png`) |
 | `assets/products/` | product photographs |
 | `source/` | the client's original material, not published |
