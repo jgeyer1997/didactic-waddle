@@ -12,7 +12,9 @@ All the page copy is in Italian.
 | Pull quote | poster: "Dalle idee alla stampa, il tuo partner di fiducia." |
 | Come lavoriamo | the four poster icons, with connecting captions written for the site |
 | Prodotti — intro and descriptions | written for the site, based on the ipfs.it categories |
-| Green band | `source/website_raw_text.txt`, 4th paragraph |
+| Franchising — intro | `source/website_raw_text.txt`, 4th paragraph |
+| Franchising — the three numbered cards | supplied by the client |
+| Green band | claim supplied by the client |
 
 The paragraphs from the source file are reproduced verbatim, typographic
 apostrophes included. If the client updates `website_raw_text.txt`, update the
