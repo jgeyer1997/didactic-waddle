@@ -1,24 +1,24 @@
 /* ==========================================================================
-   IPSO FACTO SYNERGY SRL — foglio di stile principale
-   Palette: bianco (sfondo), verde #1E3A2E, bordeaux #6E1D2B, nero (testo).
-   Nessun altro colore: i toni secondari sono trasparenze di nero o dei due
-   colori primari.
+   IPSO FACTO SYNERGY SRL — main stylesheet
+   Palette: white (background), green #1E3A2E, burgundy #6E1D2B, black (text).
+   No other colours: the secondary tones are transparencies of black or of the
+   two primary colours.
    ========================================================================== */
 
 :root {
-  --verde: #1E3A2E;
-  --bordeaux: #6E1D2B;
-  --nero: #000000;
-  --bianco: #FFFFFF;
+  --green: #1E3A2E;
+  --burgundy: #6E1D2B;
+  --black: #000000;
+  --white: #FFFFFF;
 
-  --testo: rgba(0, 0, 0, 0.82);
-  --testo-tenue: rgba(0, 0, 0, 0.58);
-  --linea: rgba(0, 0, 0, 0.12);
-  --velo: rgba(30, 58, 46, 0.04);
+  --text: rgba(0, 0, 0, 0.82);
+  --text-muted: rgba(0, 0, 0, 0.58);
+  --line: rgba(0, 0, 0, 0.12);
+  --tint: rgba(30, 58, 46, 0.04);
 
-  --larghezza: 1160px;
+  --max-width: 1160px;
   --gutter: 24px;
-  --raggio: 4px;
+  --radius: 4px;
 }
 
 /* --------------------------------------------------------------- Reset --- */
@@ -41,11 +41,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   * { transition: none !important; }
 }
 
-/* ------------------------------------------------------------ Tipografia - */
+/* ------------------------------------------------------------ Typography - */
 
 body {
-  background: var(--bianco);
-  color: var(--testo);
+  background: var(--white);
+  color: var(--text);
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-size: 17px;
@@ -57,12 +57,12 @@ h1, h2, h3 {
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: var(--nero);
+  color: var(--black);
 }
 
 strong { font-weight: 600; }
 
-a { color: var(--verde); }
+a { color: var(--green); }
 
 p + p { margin-top: 1.1em; }
 
@@ -70,7 +70,7 @@ p + p { margin-top: 1.1em; }
 
 .container {
   width: 100%;
-  max-width: var(--larghezza);
+  max-width: var(--max-width);
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
@@ -78,8 +78,8 @@ p + p { margin-top: 1.1em; }
 .section { padding: 96px 0; }
 
 .section--alt {
-  background: var(--velo);
-  border-block: 1px solid var(--linea);
+  background: var(--tint);
+  border-block: 1px solid var(--line);
 }
 
 .section__title {
@@ -91,15 +91,15 @@ p + p { margin-top: 1.1em; }
 .section__intro {
   max-width: 62ch;
   margin-bottom: 56px;
-  color: var(--testo-tenue);
+  color: var(--text-muted);
 }
 
-.occhiello {
+.eyebrow {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--bordeaux);
+  color: var(--burgundy);
   margin-bottom: 14px;
 }
 
@@ -107,38 +107,38 @@ p + p { margin-top: 1.1em; }
   width: 72px;
   height: 3px;
   border: 0;
-  background: var(--bordeaux);
+  background: var(--burgundy);
   margin: 28px 0;
 }
 
-.verde { color: var(--verde); }
-.bordeaux { color: var(--bordeaux); }
+.green { color: var(--green); }
+.burgundy { color: var(--burgundy); }
 
-/* Reso visibile solo quando riceve il focus da tastiera. */
+/* Revealed only when it receives keyboard focus. */
 .skip-link {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--verde);
-  color: var(--bianco);
+  background: var(--green);
+  color: var(--white);
   padding: 12px 20px;
   z-index: 100;
 }
 .skip-link:focus { left: 0; }
 
 :focus-visible {
-  outline: 2px solid var(--bordeaux);
+  outline: 2px solid var(--burgundy);
   outline-offset: 3px;
 }
 
-/* --------------------------------------------------------- Intestazione -- */
+/* --------------------------------------------------------------- Header -- */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--bianco);
-  border-bottom: 1px solid var(--linea);
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
 }
 
 .site-header__inner {
@@ -162,7 +162,7 @@ p + p { margin-top: 1.1em; }
 .site-nav a {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--nero);
+  color: var(--black);
   text-decoration: none;
   padding: 6px 0;
   border-bottom: 2px solid transparent;
@@ -171,11 +171,11 @@ p + p { margin-top: 1.1em; }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--verde);
-  border-bottom-color: var(--bordeaux);
+  color: var(--green);
+  border-bottom-color: var(--burgundy);
 }
 
-/* Pulsante hamburger: nascosto da desktop, mostrato sotto i 900px. */
+/* Hamburger button: hidden on desktop, shown below 900px. */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -194,7 +194,7 @@ p + p { margin-top: 1.1em; }
   width: 24px;
   height: 2px;
   margin-inline: auto;
-  background: var(--verde);
+  background: var(--green);
 }
 
 /* ----------------------------------------------------------------- Hero -- */
@@ -205,7 +205,7 @@ p + p { margin-top: 1.1em; }
   overflow: hidden;
 }
 
-/* Filigrana: il marchio in grande sul lato destro, come nel poster. */
+/* Watermark: the brand mark, oversized on the right side, as on the poster. */
 .hero::after {
   content: "";
   position: absolute;
@@ -249,99 +249,99 @@ p + p { margin-top: 1.1em; }
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid var(--verde);
-  border-radius: var(--raggio);
+  border: 2px solid var(--green);
+  border-radius: var(--radius);
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
-.btn--pieno {
-  background: var(--verde);
-  color: var(--bianco);
+.btn--solid {
+  background: var(--green);
+  color: var(--white);
 }
-.btn--pieno:hover,
-.btn--pieno:focus-visible {
-  background: var(--bordeaux);
-  border-color: var(--bordeaux);
+.btn--solid:hover,
+.btn--solid:focus-visible {
+  background: var(--burgundy);
+  border-color: var(--burgundy);
 }
 
-.btn--bordo {
+.btn--outline {
   background: transparent;
-  color: var(--verde);
+  color: var(--green);
 }
-.btn--bordo:hover,
-.btn--bordo:focus-visible {
-  background: var(--verde);
-  color: var(--bianco);
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: var(--green);
+  color: var(--white);
 }
 
-/* ------------------------------------------------------------ Chi siamo -- */
+/* ---------------------------------------------------------------- About -- */
 
-.due-colonne {
+.two-columns {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
   gap: 64px;
   align-items: start;
 }
 
-.citazione {
-  border-left: 3px solid var(--bordeaux);
+.quote {
+  border-left: 3px solid var(--burgundy);
   padding-left: 26px;
   font-size: clamp(1.3rem, 2.4vw, 1.7rem);
   font-weight: 500;
   font-style: italic;
   line-height: 1.35;
-  color: var(--verde);
+  color: var(--green);
 }
 
-/* -------------------------------------------------------- Come lavoriamo - */
+/* --------------------------------------------------------- How we work --- */
 
-.fasi {
+.steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
 }
 
-.fase {
+.step {
   padding: 0 28px;
-  border-left: 1px solid var(--linea);
+  border-left: 1px solid var(--line);
 }
-.fase:first-child { border-left: 0; padding-left: 0; }
-.fase:last-child { padding-right: 0; }
+.step:first-child { border-left: 0; padding-left: 0; }
+.step:last-child { padding-right: 0; }
 
-.fase__icona {
+.step__icon {
   width: 48px;
   height: 48px;
   margin-bottom: 20px;
   fill: none;
-  stroke: var(--verde);
+  stroke: var(--green);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-.fase__titolo {
+.step__title {
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--verde);
+  color: var(--green);
   margin-bottom: 10px;
 }
 
-.fase__testo {
+.step__text {
   font-size: 0.95rem;
-  color: var(--testo-tenue);
+  color: var(--text-muted);
 }
 
-/* ------------------------------------------------------------- Prodotti -- */
+/* ------------------------------------------------------------- Products -- */
 
-.prodotti {
+.products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 56px 40px;
 }
 
-.prodotto img {
+.product img {
   width: 100%;
   height: 210px;
   object-fit: contain;
@@ -350,26 +350,26 @@ p + p { margin-top: 1.1em; }
   transition: transform 0.3s ease;
 }
 
-.prodotto:hover img { transform: scale(1.04); }
+.product:hover img { transform: scale(1.04); }
 
-.prodotto__titolo {
+.product__title {
   font-size: 1.1rem;
   font-weight: 600;
   padding-top: 16px;
-  border-top: 2px solid var(--verde);
+  border-top: 2px solid var(--green);
   margin-bottom: 8px;
 }
 
-.prodotto__testo {
+.product__text {
   font-size: 0.95rem;
-  color: var(--testo-tenue);
+  color: var(--text-muted);
 }
 
 /* -------------------------------------------------------------- Partner -- */
 
 .partner {
-  background: var(--verde);
-  color: var(--bianco);
+  background: var(--green);
+  color: var(--white);
   padding: 72px 0;
 }
 
@@ -384,89 +384,89 @@ p + p { margin-top: 1.1em; }
 
 .partner strong { font-weight: 600; }
 
-/* ------------------------------------------------------------- Contatti -- */
+/* ------------------------------------------------------------- Contacts -- */
 
-.contatti {
+.contacts {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 56px;
   align-items: start;
 }
 
-.contatti__dati { font-style: normal; }
+.contacts__details { font-style: normal; }
 
-.contatto { margin-bottom: 28px; }
+.contact { margin-bottom: 28px; }
 
-.contatto__etichetta {
+.contact__label {
   display: block;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--bordeaux);
+  color: var(--burgundy);
   margin-bottom: 4px;
 }
 
-.contatto a {
-  color: var(--nero);
+.contact a {
+  color: var(--black);
   text-decoration: none;
-  border-bottom: 1px solid var(--linea);
+  border-bottom: 1px solid var(--line);
 }
-.contatto a:hover { color: var(--verde); border-bottom-color: var(--verde); }
+.contact a:hover { color: var(--green); border-bottom-color: var(--green); }
 
-.contatti__mappa {
-  border: 1px solid var(--linea);
-  border-radius: var(--raggio);
+.contacts__map {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   overflow: hidden;
 }
 
-.contatti__mappa iframe {
+.contacts__map iframe {
   display: block;
   width: 100%;
   height: 380px;
   border: 0;
 }
 
-/* --------------------------------------------------------- Piè di pagina - */
+/* --------------------------------------------------------------- Footer -- */
 
 .site-footer {
-  border-top: 1px solid var(--linea);
+  border-top: 1px solid var(--line);
   padding: 56px 0 44px;
   text-align: center;
 }
 
-.site-footer__marchio {
+.site-footer__brand {
   width: 46px;
   height: 46px;
   margin: 0 auto 18px;
 }
 
-.site-footer__nome {
+.site-footer__name {
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--verde);
+  color: var(--green);
 }
 
-.site-footer__riga {
+.site-footer__line {
   font-size: 0.92rem;
-  color: var(--testo-tenue);
+  color: var(--text-muted);
   margin-top: 6px;
 }
 
 .site-footer__copy {
   font-size: 0.82rem;
-  color: var(--testo-tenue);
+  color: var(--text-muted);
   margin-top: 20px;
 }
 
 /* ---------------------------------------------------------- Responsive --- */
 
 @media (max-width: 980px) {
-  .prodotti { grid-template-columns: repeat(2, 1fr); }
-  .fasi { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
-  .fase:nth-child(odd) { border-left: 0; padding-left: 0; }
-  .due-colonne,
-  .contatti { grid-template-columns: 1fr; gap: 40px; }
+  .products { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
+  .step:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .two-columns,
+  .contacts { grid-template-columns: 1fr; gap: 40px; }
 }
 
 @media (max-width: 900px) {
@@ -477,8 +477,8 @@ p + p { margin-top: 1.1em; }
     position: absolute;
     inset-inline: 0;
     top: 100%;
-    background: var(--bianco);
-    border-bottom: 1px solid var(--linea);
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
     padding: 8px 0 20px;
   }
 
@@ -493,7 +493,7 @@ p + p { margin-top: 1.1em; }
   .site-nav a {
     display: block;
     padding: 14px 0;
-    border-bottom: 1px solid var(--linea);
+    border-bottom: 1px solid var(--line);
   }
 }
 
@@ -502,8 +502,8 @@ p + p { margin-top: 1.1em; }
   .hero { padding: 64px 0 56px; }
   .site-header__inner { min-height: 76px; }
   .site-header__logo img { height: 42px; }
-  .prodotti { grid-template-columns: 1fr; gap: 44px; }
-  .fasi { grid-template-columns: 1fr; }
-  .fase { border-left: 0; padding-inline: 0; }
+  .products { grid-template-columns: 1fr; gap: 44px; }
+  .steps { grid-template-columns: 1fr; }
+  .step { border-left: 0; padding-inline: 0; }
   .btn { flex: 1 1 100%; text-align: center; }
 }

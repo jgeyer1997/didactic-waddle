@@ -1,52 +1,52 @@
 # Design
 
-Riferimento visivo: `source/poster.jpeg` (molto bianco, titoli grandi, filetti
-sottili, corpo del testo leggero).
+Visual reference: `source/poster.jpeg` (lots of white, large headings, thin
+rules, light body text).
 
-## Colori
+## Colours
 
-Sono ammessi **solo** questi quattro valori. Ogni altra tinta deve essere una
-trasparenza di uno di essi, dichiarata come variabile in `:root`.
+**Only** these four values are allowed. Every other shade must be a
+transparency of one of them, declared as a variable in `:root`.
 
-| Variabile | Valore | Uso |
+| Variable | Value | Use |
 | --- | --- | --- |
-| `--bianco` | `#FFFFFF` | sfondo della pagina |
-| `--verde` | `#1E3A2E` | titoli di sezione, icone, pulsante primario, fascia "partner" |
-| `--bordeaux` | `#6E1D2B` | occhielli, filetti, stati hover |
-| `--nero` | `#000000` | titoli e testo corrente |
+| `--white` | `#FFFFFF` | page background |
+| `--green` | `#1E3A2E` | section headings, icons, primary button, "partner" band |
+| `--burgundy` | `#6E1D2B` | eyebrows, rules, hover states |
+| `--black` | `#000000` | headings and body text |
 
-Toni secondari già definiti: `--testo` (nero 82%), `--testo-tenue` (58%),
-`--linea` (12%), `--velo` (verde 4%, sfondo delle sezioni alternate).
+Secondary tones already defined: `--text` (black 82%), `--text-muted` (58%),
+`--line` (12%), `--tint` (green 4%, background of the alternating sections).
 
-## Tipografia
+## Typography
 
-Montserrat da Google Fonts, pesi 400/500/600/700.
+Montserrat from Google Fonts, weights 400/500/600/700.
 
-- Titoli — 600, 700 solo per l'`h1` dell'hero
-- Testo — 400
-- Testo in grassetto — 500/600 (`strong` è impostato a 600)
+- Headings — 600, with 700 only for the hero `h1`
+- Body text — 400
+- Bold text — 500/600 (`strong` is set to 600)
 
-Le dimensioni dei titoli usano `clamp()`, quindi scalano senza media query.
+Heading sizes use `clamp()`, so they scale without media queries.
 
-## Convenzioni CSS
+## CSS conventions
 
-- File unico, ordinato per sezione della pagina; ogni blocco ha un commento.
-- Nomi delle classi in italiano, stile BEM: `.prodotto__titolo`, `.fase__icona`.
-- Variabili in `:root` per colori, larghezza massima e gutter; niente valori
-  esadecimali sparsi nel foglio.
-- Le icone di "Come lavoriamo" sono SVG inline che ereditano `stroke: var(--verde)`.
+- A single file, ordered by page section; every block has a comment.
+- English class names, BEM style: `.product__title`, `.step__icon`.
+- Variables in `:root` for colours, maximum width and gutter; no hex values
+  scattered through the stylesheet.
+- The "Come lavoriamo" icons are inline SVGs that inherit `stroke: var(--green)`.
 
-## Breakpoint
+## Breakpoints
 
-| Larghezza | Effetto |
+| Width | Effect |
 | --- | --- |
-| ≤ 1100px | nascosta la filigrana del marchio nell'hero |
-| ≤ 980px | prodotti su 2 colonne, fasi 2×2, contatti e "chi siamo" su una colonna |
-| ≤ 900px | menu a scomparsa con pulsante hamburger |
-| ≤ 620px | tutto su una colonna, logo e spaziature ridotti |
+| ≤ 1100px | the brand watermark in the hero is hidden |
+| ≤ 980px | products in 2 columns, steps 2×2, contacts and "about" in one column |
+| ≤ 900px | collapsible menu behind a hamburger button |
+| ≤ 620px | everything in one column, smaller logo and spacing |
 
-## Immagini del marchio
+## Brand images
 
-`assets/img/logo.jpg` e `assets/img/marchio.png` sono ritagli di
-`source/logo.jpeg` con lo sfondo portato a bianco puro: sul bianco della pagina
-il JPEG originale lasciava un rettangolo grigio visibile.
+`assets/img/logo.jpg` and `assets/img/marchio.png` are crops of
+`source/logo.jpeg` with the background pushed to pure white: against the white
+of the page, the original JPEG left a visible grey rectangle.

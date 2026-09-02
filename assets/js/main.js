@@ -1,6 +1,6 @@
 /**
- * IPSO FACTO SYNERGY SRL — script del sito.
- * Due sole responsabilità: il menu mobile e l'anno nel piè di pagina.
+ * IPSO FACTO SYNERGY SRL — site script.
+ * Two responsibilities only: the mobile menu and the year in the footer.
  */
 (function () {
   "use strict";
@@ -10,14 +10,14 @@
 
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
-      var aperto = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(aperto));
-      toggle.setAttribute("aria-label", aperto ? "Chiudi il menu" : "Apri il menu");
+      var isOpen = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Chiudi il menu" : "Apri il menu");
     });
 
-    // Dopo un clic su una voce, il menu mobile si richiude da solo.
-    nav.addEventListener("click", function (evento) {
-      if (evento.target.closest("a")) {
+    // After a click on an entry, the mobile menu closes itself.
+    nav.addEventListener("click", function (event) {
+      if (event.target.closest("a")) {
         nav.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Apri il menu");
@@ -25,8 +25,8 @@
     });
   }
 
-  var anno = document.getElementById("anno");
-  if (anno) {
-    anno.textContent = String(new Date().getFullYear());
+  var year = document.getElementById("year");
+  if (year) {
+    year.textContent = String(new Date().getFullYear());
   }
 })();

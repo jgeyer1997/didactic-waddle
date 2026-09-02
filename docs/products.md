@@ -1,12 +1,12 @@
-# Prodotti
+# Products
 
-Le nove categorie e le etichette provengono dalla sezione "I nostri prodotti" di
-`https://www.ipfs.it`, sito di proprietà del cliente. Le fotografie sono state
-scaricate da `https://www.ipfs.it/images/` (il cliente ne detiene i diritti).
+The nine categories and their labels come from the "I nostri prodotti" section
+of `https://www.ipfs.it`, a site owned by the client. The photographs were
+downloaded from `https://www.ipfs.it/images/` (the client holds the rights).
 
-## Categorie pubblicate
+## Published categories
 
-| Categoria | Immagine in pagina |
+| Category | Image on the page |
 | --- | --- |
 | Alberghi e Ristoranti | `alberghi1.jpg` |
 | Arte e Architettura | `arte3.jpg` |
@@ -18,24 +18,24 @@ scaricate da `https://www.ipfs.it/images/` (il cliente ne detiene i diritti).
 | Fiere ed Eventi | `eventi2.jpg` |
 | Studi Legali e Finanza | `finanza1.jpg` |
 
-## Archivio immagini
+## Image archive
 
-`assets/products/` contiene tutte e 35 le fotografie della sezione originale,
-3–4 per categoria, non solo le nove pubblicate: sono disponibili per sostituire
-uno scatto senza tornare a scaricarlo. I nomi seguono quelli di origine, tranne
-la categoria immobiliare, rinominata da `brochure gabetti-crop-u3199.jpg`,
-`cartello vetrina.jpg` e `cartolina.jpg` in `immobiliare1-3.jpg` per togliere
-spazi e riferimenti a un singolo cliente.
+`assets/products/` holds all 35 photographs from the original section, 3–4 per
+category, not just the nine that are published: they are there so a shot can be
+swapped without downloading it again. The filenames follow the originals,
+except for the real-estate category, renamed from `brochure gabetti-crop-u3199.jpg`,
+`cartello vetrina.jpg` and `cartolina.jpg` to `immobiliare1-3.jpg` to remove
+spaces and references to a single customer.
 
-## Resa in pagina
+## How they render on the page
 
-Gli originali sono piccoli (circa 312×208 px) e ritraggono stampati che
-"galleggiano" su fondo bianco. In pagina occupano un riquadro alto 210px con
-`object-fit: contain` e `object-position: center bottom`: così i titoli restano
-allineati fra le colonne e le immagini non vengono mai ingrandite oltre la loro
-risoluzione. Se il cliente fornisce scatti ad alta risoluzione si può alzare
-quel valore in `.prodotto img`.
+The originals are small (roughly 312×208 px) and show printed pieces
+"floating" on a white background. On the page they sit in a 210px-tall box with
+`object-fit: contain` and `object-position: center bottom`, so the headings stay
+aligned across columns and the images are never scaled beyond their own
+resolution. If the client supplies high-resolution shots, that value can be
+raised in `.product img`.
 
-Sostituendo uno scatto, sceglierne uno con fondo bianco: le foto ambientate
-(per esempio `immobiliare1.jpg`, un roll-up ripreso in un interno) spezzano
-l'uniformità della griglia.
+When replacing a shot, pick one with a white background: photographs taken in
+context (for example `immobiliare1.jpg`, a roll-up shot indoors) break the
+uniformity of the grid.

@@ -1,24 +1,31 @@
-# IPSO FACTO SYNERGY SRL — sito vetrina
+# IPSO FACTO SYNERGY SRL — showcase site
 
-Sito statico a pagina singola, in italiano. Nessuna build, nessuna dipendenza.
-Anteprima locale: `python3 -m http.server` e apri `http://localhost:8000`.
+Static single-page site. No build step, no dependencies.
+Local preview: `python3 -m http.server`, then open `http://localhost:8000`.
 
-## File
+## Language
 
-| Percorso | Contenuto |
+The page copy is in Italian — that is the client's audience, and the wording is
+fixed by them. Everything else is in English: code comments, documentation,
+CSS class names and custom properties, HTML ids, JavaScript identifiers.
+Do not introduce new Italian identifiers or comments.
+
+## Files
+
+| Path | Contents |
 | --- | --- |
-| `index.html` | tutti i contenuti della pagina |
-| `assets/css/styles.css` | tutti gli stili |
-| `assets/js/main.js` | menu mobile e anno nel footer |
-| `assets/img/` | logo (`logo.jpg`) e marchio (`marchio.png`) |
-| `assets/products/` | fotografie dei prodotti |
-| `source/` | materiale originale del cliente, non pubblicato |
+| `index.html` | all page content |
+| `assets/css/styles.css` | all styles |
+| `assets/js/main.js` | mobile menu and footer year |
+| `assets/img/` | logo (`logo.jpg`) and brand mark (`marchio.png`) |
+| `assets/products/` | product photographs |
+| `source/` | the client's original material, not published |
 
-## Vincoli
+## Constraints
 
-Palette, font e provenienza dei testi sono fissati dal cliente. Leggi il
-documento pertinente **prima** di modificare:
+The palette, the fonts and the provenance of the copy are fixed by the client.
+Read the relevant document **before** making changes:
 
-- [docs/design.md](docs/design.md) — colori, tipografia, convenzioni CSS, breakpoint
-- [docs/content.md](docs/content.md) — origine di ogni testo e dei dati di contatto
-- [docs/products.md](docs/products.md) — le 9 categorie e le relative immagini
+- [docs/design.md](docs/design.md) — colours, typography, CSS conventions, breakpoints
+- [docs/content.md](docs/content.md) — where each piece of copy and each contact detail comes from
+- [docs/products.md](docs/products.md) — the 9 categories and their images

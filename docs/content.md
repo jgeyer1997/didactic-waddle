@@ -1,39 +1,39 @@
-# Contenuti
+# Content
 
-Tutti i testi sono in italiano.
+All the page copy is in Italian.
 
-## Origine dei testi
+## Where the copy comes from
 
-| Sezione | Origine |
+| Section | Source |
 | --- | --- |
-| Hero — titolo | claim del poster: "Il tuo progetto, in buone mani." |
-| Hero — paragrafo | `source/website_raw_text.txt`, 1º capoverso |
-| Chi siamo | `source/website_raw_text.txt`, 2º e 3º capoverso |
-| Citazione | poster: "Dalle idee alla stampa, il tuo partner di fiducia." |
-| Come lavoriamo | le quattro icone del poster, con didascalie di raccordo scritte per il sito |
-| Prodotti — intro e descrizioni | scritte per il sito a partire dalle categorie di ipfs.it |
-| Fascia verde | `source/website_raw_text.txt`, 4º capoverso |
+| Hero — heading | poster claim: "Il tuo progetto, in buone mani." |
+| Hero — paragraph | `source/website_raw_text.txt`, 1st paragraph |
+| Chi siamo | `source/website_raw_text.txt`, 2nd and 3rd paragraphs |
+| Pull quote | poster: "Dalle idee alla stampa, il tuo partner di fiducia." |
+| Come lavoriamo | the four poster icons, with connecting captions written for the site |
+| Prodotti — intro and descriptions | written for the site, based on the ipfs.it categories |
+| Green band | `source/website_raw_text.txt`, 4th paragraph |
 
-I capoversi del file sorgente sono riportati alla lettera, apostrofi tipografici
-inclusi. Se il cliente aggiorna `website_raw_text.txt`, aggiorna anche le sezioni
-corrispondenti.
+The paragraphs from the source file are reproduced verbatim, typographic
+apostrophes included. If the client updates `website_raw_text.txt`, update the
+corresponding sections too.
 
-## Contatti
+## Contact details
 
-Forniti dal cliente, presenti sia nella sezione Contatti sia nel footer:
+Provided by the client; they appear both in the Contatti section and in the
+footer:
 
 - Via Ferruccio Parri 2, 20033 Solaro (MI)
 - +39 333 730 5757 (`tel:+393337305757`)
 - info@ipfs.it
 
-La mappa è un `iframe` di Google Maps centrato sulle coordinate
-`45.61862, 9.07475` (Via Ferruccio Parri 2), senza chiave API. Le coordinate
-sostituiscono la ricerca per indirizzo, che collocava il segnaposto su
-un'azienda vicina.
+The map is a Google Maps `iframe` centred on the coordinates
+`45.61862, 9.07475` (Via Ferruccio Parri 2), with no API key. The coordinates
+replace the address search, which put the pin on a neighbouring business.
 
-## Vincolo sul sito esistente
+## Constraint regarding the existing site
 
-Da `https://www.ipfs.it` sono state riprese **soltanto** le immagini e le
-etichette della sezione "I nostri prodotti" (vedi [products.md](products.md)).
-Le sezioni "I nostri progetti", "About us" e "Contattaci" di quel sito non vanno
-riprese: parlano di attività che questo sito non deve presentare.
+From `https://www.ipfs.it` we reused **only** the images and the labels of the
+"I nostri prodotti" section (see [products.md](products.md)). The "I nostri
+progetti", "About us" and "Contattaci" sections of that site must not be
+reused: they describe activities this site is not meant to present.

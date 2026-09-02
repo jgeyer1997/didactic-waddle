@@ -1,28 +1,30 @@
-# IPSO FACTO SYNERGY SRL — sito vetrina
+# IPSO FACTO SYNERGY SRL — showcase site
 
-Home page dell'azienda grafica Ipso Facto Synergy SRL (Solaro, MI): profilo,
-metodo di lavoro, categorie di prodotto e contatti.
+Home page for the graphic design company Ipso Facto Synergy SRL (Solaro, MI):
+profile, working method, product categories and contact details.
 
-Sito statico a pagina singola: HTML, CSS e un file JavaScript, senza build e
-senza dipendenze oltre al font Montserrat servito da Google Fonts.
+Static single-page site: HTML, CSS and one JavaScript file, with no build step
+and no dependencies beyond the Montserrat font served by Google Fonts.
 
-## Anteprima locale
+The page content is written in Italian, since that is the client's audience.
+Everything else — comments, documentation and code identifiers — is in English.
+
+## Local preview
 
 ```sh
 python3 -m http.server
 ```
 
-Poi apri <http://localhost:8000>. Serve un server locale (e non l'apertura
-diretta del file) perché la mappa di Google non viene caricata da `file://`.
+Then open <http://localhost:8000>. A local server is required (rather than
+opening the file directly) because the Google map does not load from `file://`.
 
-## Pubblicazione
+## Publishing
 
-Copia il contenuto della cartella, esclusa `source/`, su un qualsiasi hosting
-statico.
+Copy the contents of the folder, excluding `source/`, to any static host.
 
-## Documentazione
+## Documentation
 
-- [CLAUDE.md](CLAUDE.md) — mappa del progetto
-- [docs/design.md](docs/design.md) — colori, tipografia, breakpoint
-- [docs/content.md](docs/content.md) — origine dei testi e dei contatti
-- [docs/products.md](docs/products.md) — categorie e immagini dei prodotti
+- [CLAUDE.md](CLAUDE.md) — project map
+- [docs/design.md](docs/design.md) — colours, typography, breakpoints
+- [docs/content.md](docs/content.md) — provenance of the copy and contact details
+- [docs/products.md](docs/products.md) — product categories and images
