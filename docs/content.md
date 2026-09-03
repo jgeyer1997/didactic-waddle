@@ -26,6 +26,7 @@ Provided by the client; they appear both in the Contatti section and in the
 footer:
 
 - Via Ferruccio Parri 2, 20033 Solaro (MI)
+- +39 02 366 01 900 (`tel:+390236601900`)
 - +39 333 730 5757 (`tel:+393337305757`)
 - info@ipfs.it
 
